@@ -1,0 +1,12 @@
+**1:**
+
+A random seed sets the starting point for random number generation, ensuring reproducible results in simulations. A random seed is like a starting point in a board game. If everyone starts at the same spot, they will all follow the same path. It makes sure we get the same results each time we play, so we can compare and learn.
+
+Monte Carlo simulations in the article helped figure out the best rules for using Army helicopters in emergencies. The simulation tested different ways to allocate helicopters by randomly sampling possible scenarios to see how many would be needed in real combat situations. This helps improve planning and ensures the right number of units are available when needed.
+
+**2:**
+
+I enjoyed the last few chapters as it explained concepts in bite-sized information. It was challenging because it introduced new ideas, but easy to grasp once I got the hang of it~
+
+- **Free Fall Calculations**: Computes time and velocity without air resistance, converting velocity to miles per hour.
+- **Air Resistance**: Considers terminal velocity, time to reach it, distance covered, and total fall time with air resistance.
