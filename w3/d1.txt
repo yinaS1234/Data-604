@@ -1,2 +1,32 @@
 This is an interesting comparison~ Verification checks if our simulation works right, like making sure a car's wheels move correctly when the engine starts. Validation checks if our simulation matches the real world, like seeing if the car goes as fast as a real car would. In the reading, they used a special test called Monte Carlo simulations to compare their simulation with real data from Operation Iraqi Freedom, making sure their simulation could predict the number of ambulances needed in the real world correctly.
 
+The optional exercise of running multiple simulations to reduce noise in the bikeshare model was particularly rewarding. It builds on our previous homework, making the model more realistic. This approach extends the bikeshare model to a new level by averaging results over multiple runs, providing a clearer picture of the relationship between parameters and metrics, and ensuring more reliable results.
+
+def run_multiple_simulation(p1, p2, num_steps, num_runs):
+    results = TimeSeries()
+    for n in range(num_runs):
+        state = State(olin=10, wellesley=2, 
+                  olin_empty=0, wellesley_empty=0)
+        for i in range(num_steps):
+            step(state, p1, p2)
+        results[n] = state.olin_empty
+    return results
+
+res = run_multiple_simulation(0.3, 0.3, 60, 10)
+print(res)
+print(f'the mean of the timeseries results: {res.mean()}')
+
+sweep = SweepSeries()
+for p1 in p1_array:
+    results = run_multiple_simulation(p1, 0.3, 60, 20)
+    sweep[p1] = np.mean(results)
+
+sweep.plot(label='Olin')
+decorate(title='Olin-Wellesley Bikeshare',
+         xlabel='p1',
+         ylabel='Average Number of unhappy customers')
+
+
+
+
+
