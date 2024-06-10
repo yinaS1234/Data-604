@@ -1,1 +1,2 @@
+This is an interesting comparison~ Verification checks if our simulation works right, like making sure a car's wheels move correctly when the engine starts. Validation checks if our simulation matches the real world, like seeing if the car goes as fast as a real car would. In the reading, they used a special test called Monte Carlo simulations to compare their simulation with real data from Operation Iraqi Freedom, making sure their simulation could predict the number of ambulances needed in the real world correctly.
 
