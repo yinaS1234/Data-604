@@ -1,5 +1,13 @@
+In the rainwater paper, balance equations help the system work well.
 
-In the rainwater paper, balance equations help the system work well. Equation (1) figures out how much water is in the tank each day by looking at the rain caught (C), water used (D), and overflow (O). It makes sure the tank never goes empty. Equation (2) makes sure the tank doesn't overflow by checking the tank size (Cap). These equations help make sure there is enough water without too much.
+**Equation (1):**
+\[ V_t = \max\{0, V_{t-1} + C_t - D_t - O_t\} \]
+Equation (1) figures out how much water is in the tank each day by looking at the rain caught (C), water used (D), and overflow (O). It makes sure the tank never goes empty.
+
+**Equation (2):**
+\[ V_t = \min(\max\{0, V_{t-1} + C_t - D_t\}, \text{Cap}) \]
+Equation (2) makes sure the tank doesn't overflow by checking the tank size (Cap). These equations help make sure there is enough water without too much.
+
 
 One part that was particularly challenging was plotting the results for different initial populations in the exercise. The task was to run the model with initial populations between 1 and 20 billion and plot the results on the same axes. It required understanding how to modify the system's parameters and properly use the plotting functions to visualize the data
 def plot_results_mod(census, un, sweep_series, title):
