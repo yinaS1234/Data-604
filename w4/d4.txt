@@ -1,2 +1,4 @@
 
 In the rainwater paper, balance equations help the system work well. Equation (1) figures out how much water is in the tank each day by looking at the rain caught (C), water used (D), and overflow (O). It makes sure the tank never goes empty. Equation (2) makes sure the tank doesn't overflow by checking the tank size (Cap). These equations help make sure there is enough water without too much.
+
+I found it really rewarding how the author wrote this notebook to teach object-oriented programming by incrementally modifying the model with new features and organizing the code with functions. The process of figuring it out is both challenging and rewarding. Many times I felt like I almost got it but had to revise several times to finally understand. For instance, the evolution of the update functions from update_func1 to update_func3
