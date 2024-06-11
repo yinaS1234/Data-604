@@ -1,4 +1,23 @@
 
 In the rainwater paper, balance equations help the system work well. Equation (1) figures out how much water is in the tank each day by looking at the rain caught (C), water used (D), and overflow (O). It makes sure the tank never goes empty. Equation (2) makes sure the tank doesn't overflow by checking the tank size (Cap). These equations help make sure there is enough water without too much.
 
-I found it really rewarding how the author wrote this notebook to teach object-oriented programming by incrementally modifying the model with new features and organizing the code with functions. The process of figuring it out is both challenging and rewarding. Many times I felt like I almost got it but had to revise several times to finally understand. For instance, the evolution of the update functions from update_func1 to update_func3
+One part that was particularly challenging was plotting the results for different initial populations in the exercise. The task was to run the model with initial populations between 1 and 20 billion and plot the results on the same axes. It required understanding how to modify the system's parameters and properly use the plotting functions to visualize the data
+def plot_results_mod(census, un, sweep_series, title):
+    plt.plot(census, ':', label='US Census')
+    plt.plot(un, '--', label='UN DESA')
+    
+    for p_0, results in sweep_series.items():
+        plt.plot(results, label=f'p_0 = {p_0} billion')
+    
+    decorate(xlabel='Year', ylabel='World population (billion)', title=title)
+    plt.legend()
+
+initial_populations = linspace(1, 20, 5)
+sweep = SweepSeries()
+
+for p_0 in initial_populations:
+    system = System(t_0=t_0, t_end=2250, p_0=p_0, alpha=0.025, beta=-0.0018)
+    results = run_simulation(system, update_func_quad)
+    sweep[p_0] = results
+
+plot_results_mod(census, un, sweep, 'Population Projections with Different p_0')
