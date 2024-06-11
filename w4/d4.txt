@@ -1,1 +1,2 @@
 
+In the rainwater paper, balance equations help the system work well. Equation (1) figures out how much water is in the tank each day by looking at the rain caught (C), water used (D), and overflow (O). It makes sure the tank never goes empty. Equation (2) makes sure the tank doesn't overflow by checking the tank size (Cap). These equations help make sure there is enough water without too much.
